@@ -10,9 +10,13 @@ English | [中文](./README.zh-CN.md)
 
 This project is a wireless Tally lamp based on Espressif's ESP8266EX chip, with automatic switching between power and battery power, WS2812 for indicator light and LC4054 chip for charging chip.
 
+![Exploded](https://github.com/MakingClub/TallyHo/blob/main/images/Exploded.jpg)
+
 ## Background of the project
 
 When live broadcasting or recording video, the Tally light is used for shooting prompts and status indicators in video recording and live broadcasting, indicating the current shooting status through changes in light color and brightness, so as to provide high-definition video recording and live broadcasting efficiency and quality. This project is early in the design of a wireless Tally light based on the Espressif ESP8266EX chip and the Arduino framework.
+
+![Frame](https://github.com/MakingClub/TallyHo/blob/main/images/Frame.png)
 
 ## Hardware design
 
