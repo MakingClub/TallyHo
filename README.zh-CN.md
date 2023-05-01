@@ -18,5 +18,8 @@
 ## 项目背景
 在直播或录制视频时，Tally灯用于视频录制和直播中的拍摄提示和状态指示，通过灯光颜色和亮度的变化来指示当前拍摄状态，以提高视频录制和直播的效率和质量。本项目旨在设计一种基于乐鑫ESP8266EX芯片和Arduino框架的无线Tally灯。
 
+
+
 ## 安装 
-这个项目基于[vTally - Wireless Tally and VISCA converter for vMix](https://github.com/wasn-eu/vTally)，编译平台使用
+这个项目基于[vTally - Wireless Tally and VISCA converter for vMix](https://github.com/wasn-eu/vTally)，编译平台使用platformio，请确保你已经能够成功编译ESP8266芯片程序bin文件。
+
