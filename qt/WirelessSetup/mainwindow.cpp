@@ -101,7 +101,7 @@ void MainWindow::on_SearchButton_clicked()
     SearchTimeCount = 0;  // 计时器清零
     DeviceNum = 0;  // 设备计数清零
     SearchTime = new QTimer();
-    SearchTime->setInterval(1);
+    SearchTime->setInterval(200);
     connect(SearchTime, SIGNAL(timeout()), this, SLOT(onTimeOut()));
     SearchTime->start();  // 搜索定时器
     ui->listWidget->clear();  // 清除列表设备
@@ -301,16 +301,17 @@ void MainWindow::on_VmixIpButton_clicked()
         while(row < (ui->listWidget->count())) {  // 列表获取
             QHostAddress ip = QHostAddress(getIpAddress(ui->listWidget->item(row)->text()));  // 获取对应行的ip
 //            ui->SystemLogInfo->insertPlainText("\n"+ip);
-//            ui->SystemLogInfo->insertPlainText("\n"+row);
+            ui->SystemLogInfo->insertPlainText("\n"+row);
             // 将数据发送到指定ip
             QString meg = "id"+QString ("%1").arg(row+1);
             udpServer->writeDatagram(meg.toUtf8(), ip, 2333);
             // 将服务器IP发送到指定ip
-
+            meg = "ip"+ui->VmixIpEdit->text().trimmed();
+            udpServer->writeDatagram(meg.toUtf8(), ip, 2333);
             row++;
         }
     }else {  // 复选框未选中 向局域网广播ip地址
-        QString newiP = ui->VmixIpEdit->text().trimmed();
+        QString newiP = "ip"+ui->VmixIpEdit->text().trimmed();
         udpServerbroadcast(newiP);  // 局域网广播
     }
     proLabel->setText("配置完成");

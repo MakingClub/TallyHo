@@ -37,7 +37,7 @@
 
 #define BvEnPin  16
 #define BvPin    17  // A0
-#define BvGain   6.1  // 510K+100K/100K
+#define BvGain   5.7  // 510K+100K/100K 470K+100K/100K
 
 
 #endif /* CONFIG_H */
